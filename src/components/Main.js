@@ -11,9 +11,18 @@ class Main extends React.Component {
                 <div className="chatBox" >
                     <div className = "menu">
                         <h1>Chat</h1>
-                        <p>-</p>
-                        <p>x</p>
-                    </div>    
+                        <div>
+                            <p>-</p>
+                            <p>x</p>
+                        </div>
+                    </div>  
+                    <div className = "chatContainer">
+
+                    </div>  
+                    <div className = "chatInput">
+                        <input type="text"/>
+                        <button>Send</button>
+                    </div>
                 </div>
             </>
         )
