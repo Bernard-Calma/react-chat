@@ -5,7 +5,6 @@ import Chat from "./Chat";
 
 // Database Model Sample
 import chatRecords from "../models/chatRecords"
-import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
 
 /*
     Main Component
@@ -27,6 +26,12 @@ class Main extends React.Component {
     }
     handleChatSubmit = (e) => {
         e.preventDefault();
+        let chat = {
+            time: new Date().toLocaleTimeString(),
+            username: "Ban",
+            chat: this.state.chat,
+        }
+        chatRecords.push(chat)
         this.setState({
             chat: "",
         })
