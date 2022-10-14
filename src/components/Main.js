@@ -2,8 +2,11 @@ import React from "react";
 import "./Main.css"
 
 import Chat from "./Chat";
+
+// Database Model Sample
 import chatRecords from "../models/chatRecords"
-console.log(chatRecords)
+import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
+
 /*
     Main Component
 */
@@ -15,6 +18,20 @@ class Main extends React.Component {
             chatRecords: chatRecords
         }
     } 
+    handleChatChange = (e) => {
+        e.preventDefault();
+        // console.log(e.target.value)
+        this.setState({
+            chat: e.target.value
+        })
+    }
+    handleChatSubmit = (e) => {
+        e.preventDefault();
+        this.setState({
+            chat: "",
+        })
+        e.target.previousSibling.value = ""
+    }
     render(){
         return(
             <>
@@ -31,13 +48,21 @@ class Main extends React.Component {
                     <div className = "chatContainer">
                         {this.state.chatRecords.map((chat, index) => {
                             return(
-                                <Chat key={index} time = {chat.time} username = {chat.username} chat = {chat.chat}/>
+                                <Chat 
+                                    key={index} 
+                                    time = {chat.time} 
+                                    username = {chat.username} 
+                                    chat = {chat.chat}
+                                />
                             )                            
                         })}
                     </div>  
                     <div className = "chatInput">
-                        <input type="text"/>
-                        <button>Send</button>
+                        <input 
+                            type="text" 
+                            onChange={this.handleChatChange}
+                        />
+                        <button onClick={this.handleChatSubmit}>Send</button>
                     </div>
                 </div>
             </>
