@@ -5,7 +5,7 @@ class Chat extends React.Component{
     render(){
         return(
             <div>
-                <p className = "chat">(Time) Username: Chat</p>
+                <p className = "chat">({this.props.time}) {this.props.username}: {this.props.chat}</p>
             </div>
         )
     }
