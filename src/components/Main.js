@@ -23,6 +23,11 @@ class Main extends React.Component {
                     </div>  
                     <div className = "chatContainer">
                         <Chat />
+                        <Chat />
+                        <Chat />
+                        <Chat />
+                        <Chat />
+                        <Chat />
                     </div>  
                     <div className = "chatInput">
                         <input type="text"/>
