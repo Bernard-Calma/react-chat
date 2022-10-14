@@ -1,6 +1,8 @@
 import React from "react";
 import "./Main.css"
 
+import Chat from "./Chat";
+
 /*
     Main Component
 */
@@ -20,7 +22,7 @@ class Main extends React.Component {
                         </div>
                     </div>  
                     <div className = "chatContainer">
-
+                        <Chat />
                     </div>  
                     <div className = "chatInput">
                         <input type="text"/>
