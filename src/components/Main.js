@@ -31,7 +31,8 @@ class Main extends React.Component {
             username: "Ban",
             chat: this.state.chat,
         }
-        chatRecords.push(chat)
+        console.log(e.target.previousSibling.value)
+        if (e.target.previousSibling.value) chatRecords.unshift(chat);
         this.setState({
             chat: "",
         })
